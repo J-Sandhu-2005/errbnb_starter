@@ -59,6 +59,8 @@ CREATE TABLE IF NOT EXISTS bookings (
 -- Reviews
 CREATE TABLE IF NOT EXISTS reviews (
     booking_id INTEGER PRIMARY KEY, -- Each review is linked to a specific booking
+    property_id INTEGER NOT NULL,
+    guest_id INTEGER NOT NULL,
     rating INTEGER NOT NULL CHECK (rating >= 1 AND rating <= 5),
     comment TEXT,
     review_date DATETIME DEFAULT CURRENT_TIMESTAMP,
